@@ -1,164 +1,151 @@
-# Next.js Cloudflare App
+# Next.js App
 
-基于 Next.js 14 和 TypeScript 构建的现代化 Web 应用，专为 Cloudflare Pages 部署优化。
+基于 Next.js 14 和 TypeScript 构建的现代化 Web 应用。
 
 ## ✨ 特性
 
-- 🔧 **严格的 TypeScript**: 100% 类型覆盖，禁用 `any` 类型
-- ⚡ **Next.js 14**: 最新的 React 框架特性
-- ☁️ **Cloudflare Pages**: 全球 CDN 和边缘计算
-- 🎨 **Tailwind CSS**: 现代化的 CSS 框架
-- 📱 **响应式设计**: 适配所有设备尺寸
-- 🚀 **性能优化**: 针对速度和 SEO 优化
+- 🚀 **Next.js 14**: 最新版本的 React 框架
+- 📝 **TypeScript**: 严格类型检查，提高代码质量
+- 🎨 **Tailwind CSS**: 实用优先的 CSS 框架
+- 🔧 **严格配置**: ESLint + TypeScript 严格模式
+- 📱 **响应式设计**: 移动端友好的界面设计
+- ⚡ **高性能**: 优化的构建配置和性能
 
-## 🛠️ 技术栈
+## 🛠 技术栈
 
 - **前端框架**: Next.js 14
-- **编程语言**: TypeScript (严格模式)
-- **样式框架**: Tailwind CSS
-- **部署平台**: Cloudflare Pages
-- **包管理器**: npm
-- **代码质量**: ESLint + 严格的 TypeScript 配置
+- **语言**: TypeScript
+- **样式**: Tailwind CSS
+- **代码规范**: ESLint + Prettier
+- **包管理**: pnpm
 
 ## 🚀 快速开始
 
-### 1. 安装依赖
+### 1. 克隆项目
 
 ```bash
-npm install
+git clone <your-repo-url>
+cd nextjs-app
 ```
 
-### 2. 启动开发服务器
+### 2. 安装依赖
 
 ```bash
-npm run dev
+pnpm install
 ```
 
-访问 [http://localhost:3000](http://localhost:3000) 查看应用。
-
-### 3. 构建项目
+### 3. 启动开发服务器
 
 ```bash
-npm run build
+pnpm dev
 ```
 
-### 4. 部署到 Cloudflare Pages
+应用将在 `http://localhost:3000` 启动。
 
-#### 方法一：使用 Wrangler CLI
+### 4. 构建生产版本
 
 ```bash
-# 安装 Wrangler（如果还没安装）
-npm install -g wrangler
-
-# 登录 Cloudflare
-wrangler login
-
-# 构建并部署
-npm run deploy
+pnpm build
+pnpm start
 ```
 
-#### 方法二：连接 Git 仓库
+## 📝 可用脚本
 
-1. 将代码推送到 GitHub 仓库
-2. 在 Cloudflare Dashboard 中创建 Pages 项目
-3. 连接 GitHub 仓库
-4. 设置构建命令：`npm run pages:build`
-5. 设置输出目录：`.vercel/output/static`
+- `pnpm dev` - 启动开发服务器
+- `pnpm build` - 构建生产版本
+- `pnpm start` - 启动生产服务器
+- `pnpm lint` - 运行 ESLint 检查
+- `pnpm type-check` - 运行 TypeScript 类型检查
 
 ## 📁 项目结构
 
 ```
-src/
-├── app/                    # Next.js App Router
-│   ├── layout.tsx         # 根布局
-│   ├── page.tsx           # 首页
-│   └── globals.css        # 全局样式
-├── components/            # React 组件
-│   ├── Header.tsx         # 头部导航
-│   ├── MainContent.tsx    # 主要内容
-│   └── Footer.tsx         # 页面底部
-└── types/                 # TypeScript 类型定义
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx          # 根布局组件
+│   │   ├── page.tsx           # 首页组件
+│   │   └── globals.css        # 全局样式
+│   ├── components/
+│   │   ├── Header.tsx         # 头部组件
+│   │   ├── Footer.tsx         # 底部组件
+│   │   └── MainContent.tsx    # 主要内容组件
+│   └── types/
+│       └── global.ts          # 全局类型定义
+├── next.config.js             # Next.js 配置
+├── tailwind.config.js         # Tailwind 配置
+├── tsconfig.json             # TypeScript 配置
+└── package.json              # 项目依赖
 ```
 
-## ⚙️ 配置说明
-
-### TypeScript 配置
-
-项目使用严格的 TypeScript 配置：
-
-- `noImplicitAny: true` - 禁止隐式 any 类型
-- `noUnusedLocals: true` - 禁止未使用的局部变量
-- `noUnusedParameters: true` - 禁止未使用的参数
-- `exactOptionalPropertyTypes: true` - 严格的可选属性类型
-- `noUncheckedIndexedAccess: true` - 检查索引访问
+## ⚙️ 配置文件
 
 ### Next.js 配置
 
-为 Cloudflare Pages 优化的配置：
+配置文件包含：
 
-- `output: 'export'` - 静态导出
-- `images.unoptimized: true` - 禁用图片优化
-- 边缘运行时支持
+- TypeScript 严格模式
+- ESLint 配置
+- 环境变量处理
 
-## 🔧 开发命令
+### TypeScript 配置
 
-- `npm run dev` - 启动开发服务器
-- `npm run build` - 构建生产版本
-- `npm run start` - 启动生产服务器
-- `npm run lint` - 运行 ESLint 检查
-- `npm run type-check` - 运行 TypeScript 类型检查
-- `npm run pages:build` - 构建 Cloudflare Pages 版本
-- `npm run preview` - 本地预览 Cloudflare Pages 版本
-- `npm run deploy` - 部署到 Cloudflare Pages
+- 严格模式启用
+- 路径别名支持
+- 现代 ES 特性支持
 
-## 📝 代码规范
+### Tailwind CSS
 
-### TypeScript 规范
+- 完整的实用类系统
+- 响应式设计支持
+- 自定义主题配置
 
-1. 所有函数必须明确返回类型
-2. 禁止使用 `any` 类型
-3. 所有变量必须被使用
-4. 使用 `interface` 定义对象类型
-5. 使用 `readonly` 修饰符保护数据
+## 🌍 环境变量
 
-### React 组件规范
+复制 `env.template` 为 `.env.local` 并根据需要修改：
 
-1. 函数组件使用箭头函数或函数声明
-2. Props 使用 `interface` 定义类型
-3. 组件必须有 JSDoc 注释
-4. 使用 `const assertions` 保护配置数据
+```bash
+cp env.template .env.local
+```
 
-### 样式规范
+## 📦 部署
 
-1. 优先使用 Tailwind CSS 类名
-2. 自定义样式放在 `globals.css`
-3. 使用 CSS 变量定义主题色彩
-4. 响应式设计优先
+该项目可以部署到任何支持 Next.js 的平台：
 
-## 🚀 部署注意事项
+- Vercel (推荐)
+- Netlify
+- 任何支持 Node.js 的服务器
 
-### Cloudflare Pages 限制
+### Vercel 部署
 
-- 最大文件大小：25MB
-- 最大函数大小：1MB
-- 最大请求时间：30秒
-- 支持的 Node.js 版本：18.x+
+1. 将代码推送到 GitHub
+2. 在 Vercel 中导入项目
+3. 自动部署完成
 
-### 环境变量
+## 🧪 开发指南
 
-在 Cloudflare Pages 设置中配置环境变量：
+### 代码规范
 
-- `NODE_ENV=production`
-- `NEXT_PUBLIC_APP_URL=https://your-app.pages.dev`
+- 使用 TypeScript 严格模式
+- 遵循 ESLint 规则
+- 组件使用函数式写法
+- 严格的类型定义
 
-## 🤝 贡献指南
+### 组件开发
 
-1. Fork 项目
-2. 创建特性分支 (`git checkout -b feature/amazing-feature`)
-3. 提交更改 (`git commit -m 'Add some amazing feature'`)
-4. 推送到分支 (`git push origin feature/amazing-feature`)
-5. 开启 Pull Request
+- 所有组件使用 TypeScript
+- 使用 `interface` 定义 props 类型
+- 导出时使用 `export default`
+
+### 样式指南
+
+- 使用 Tailwind CSS 实用类
+- 响应式设计优先
+- 语义化的 CSS 类名
+
+## 🤝 贡献
+
+欢迎提交 Issue 和 Pull Request。
 
 ## 📄 许可证
 
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
+MIT License

@@ -34,7 +34,7 @@ export function MainContent(): JSX.Element {
       color: 'bg-green-50 border-green-200',
     },
     {
-      title: 'Cloudflare',
+      title: 'Next.js',
       description: '全球 CDN 和边缘计算平台，快速部署和访问',
       icon: '☁️',
       color: 'bg-purple-50 border-purple-200',
@@ -54,11 +54,11 @@ export function MainContent(): JSX.Element {
         {/* 英雄区域 */}
         <section className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            欢迎使用 Next.js Cloudflare 应用
+            欢迎使用 Next.js 应用
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             这是一个基于 Next.js 和 TypeScript 构建的现代化 Web 应用，
-            专为 Cloudflare Pages 部署优化。
+            使用现代化的技术栈构建。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button

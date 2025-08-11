@@ -3,9 +3,9 @@ import './globals.css'
 
 // 定义严格的元数据类型
 export const metadata: Metadata = {
-  title: 'Next.js Cloudflare App',
-  description: '基于 Next.js 和 TypeScript 构建的 Cloudflare Pages 应用',
-  keywords: ['Next.js', 'TypeScript', 'Cloudflare', 'React'],
+  title: 'Next.js App',
+  description: '基于 Next.js 和 TypeScript 构建的现代化 Web 应用',
+  keywords: ['Next.js', 'TypeScript', 'React'],
   authors: [{ name: 'Developer' }],
 }
 

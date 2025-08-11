@@ -40,7 +40,7 @@ export function Footer(): JSX.Element {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* 公司信息 */}
           <div className="md:col-span-2">
-            <h3 className="text-xl font-bold mb-4">Next.js Cloudflare App</h3>
+            <h3 className="text-xl font-bold mb-4">Next.js App</h3>
             <p className="text-gray-400 mb-4 max-w-md">
               基于现代化技术栈构建的高性能 Web 应用，
               支持全球快速部署和访问。
@@ -99,7 +99,7 @@ export function Footer(): JSX.Element {
               <li>Next.js 14</li>
               <li>TypeScript</li>
               <li>Tailwind CSS</li>
-              <li>Cloudflare Pages</li>
+              <li>Vercel</li>
             </ul>
           </div>
         </div>
@@ -107,7 +107,7 @@ export function Footer(): JSX.Element {
         {/* 版权信息 */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            © {currentYear} Next.js Cloudflare App. 保留所有权利。
+            © {currentYear} Next.js App. 保留所有权利。
           </p>
         </div>
       </div>
