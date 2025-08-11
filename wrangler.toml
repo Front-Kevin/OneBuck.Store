@@ -19,3 +19,4 @@ NEXT_PUBLIC_APP_URL = "https://your-app.pages.dev"
 [env.production.vars]
 NODE_ENV = "production"
 NEXT_PUBLIC_APP_URL = "https://your-production-domain.com"
+
