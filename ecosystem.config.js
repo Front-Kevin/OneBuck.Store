@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: "nextjs-app",
+      name: "one-buck",
       script: "npm",
       args: "start",
       cwd: "/var/www/one-buck",
