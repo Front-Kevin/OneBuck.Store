@@ -1,27 +1,21 @@
 # Cloudflare Pages 配置文件
 name = "nextjs-cloudflare-app"
 compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
 
 # Pages 项目配置
-[env.production]
-account_id = ""  # 请填入您的 Cloudflare Account ID
-zone_id = ""     # 可选：如果使用自定义域名
+pages_build_output_dir = ".vercel/output/static"
 
-# 静态资源配置 - 指向 @cloudflare/next-on-pages 构建输出
-[assets]
-directory = ".vercel/output/static"
-
-# 构建配置
-[build]
-command = "npm run pages:build"
-cwd = "."
-watch_dir = "src"
-
-# 环境变量（示例）
+# 全局环境变量
 [vars]
 NODE_ENV = "production"
 NEXT_PUBLIC_APP_URL = "https://your-app.pages.dev"
 
-# Functions 配置（如果需要）
-[functions]
-compatibility_date = "2024-01-01"
+# 生产环境配置
+[env.production]
+# account_id = ""  # 可选：如果需要指定特定账户
+# zone_id = ""     # 可选：如果使用自定义域名
+
+[env.production.vars]
+NODE_ENV = "production"
+NEXT_PUBLIC_APP_URL = "https://your-production-domain.com"
