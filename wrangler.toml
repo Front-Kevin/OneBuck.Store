@@ -7,6 +7,10 @@ compatibility_date = "2024-01-01"
 account_id = ""  # 请填入您的 Cloudflare Account ID
 zone_id = ""     # 可选：如果使用自定义域名
 
+# 静态资源配置 - 指向 @cloudflare/next-on-pages 构建输出
+[assets]
+directory = ".vercel/output/static"
+
 # 构建配置
 [build]
 command = "npm run pages:build"
